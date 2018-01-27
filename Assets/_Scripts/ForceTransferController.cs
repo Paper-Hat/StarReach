@@ -23,22 +23,30 @@ public class ForceTransferController : MonoBehaviour
 
     //added default force for intial bounce;
     public float defaultForce;
+    public bool isMoving;
 
     private Vector2 _addedForce;
-    private bool _canAddMoreForce;
-    public bool isMoving;
+    private bool _playerOneTapped;
+    private bool _playerTwoTapped;
+
 	// Use this for initialization
 	void Start ()
     {
         _addedForce = Vector2.zero;
-        _canAddMoreForce = true;
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !_playerOneTapped)
         {
+            _playerOneTapped = true;
+            CalculateForceTransfer();
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightControl) && !_playerTwoTapped)
+        {
+            _playerTwoTapped = true;
             CalculateForceTransfer();
         }
 
@@ -48,25 +56,27 @@ public class ForceTransferController : MonoBehaviour
     //amount of accumulated force transfered depends on how close falling player is to the ground on key/button press
     public void CalculateForceTransfer()
     {
+        if (isMoving)
+        {
+            float transferPercentage = 0;
 
-        float transferPercentage = 0;
+            if (Mathf.Abs(transform.position.y) < firstTransferHeight)
+                transferPercentage = firstTransferRatio;
 
-        if (Mathf.Abs(transform.position.y) < firstTransferHeight)
-            transferPercentage = firstTransferRatio;
+            else if (Mathf.Abs(transform.position.y) < secondTransferHeight)
+                transferPercentage = secondTransferRatio;
 
-        else if (Mathf.Abs(transform.position.y) < secondTransferHeight)
-            transferPercentage = secondTransferRatio;
-
-        else if (Mathf.Abs(transform.position.y) < thirdTransferHeight)
-            transferPercentage = thirdTransferRatio;
+            else if (Mathf.Abs(transform.position.y) < thirdTransferHeight)
+                transferPercentage = thirdTransferRatio;
 
 
-        _addedForce =
-            transferPercentage *
-            Vector2.up *
-            forceMultiplier *
-            -otherPlayer.GetComponent<GravityController>().gravityDirection *
-            GetComponent<ForceGrowthController>().maxHeightMagnitude;
+            _addedForce =
+                transferPercentage *
+                Vector2.up *
+                forceMultiplier *
+                -otherPlayer.GetComponent<GravityController>().gravityDirection *
+                GetComponent<ForceGrowthController>().maxHeightMagnitude;
+        }
         
 
     }
@@ -89,6 +99,13 @@ public class ForceTransferController : MonoBehaviour
                 + _addedForce));
 
             _addedForce = Vector2.zero;
+
+            if (_playerOneTapped)
+                _playerOneTapped = false;
+
+            if (_playerTwoTapped)
+                _playerTwoTapped = false;
+
 
         }
     }
