@@ -26,7 +26,7 @@ public class ForceTransferController : MonoBehaviour
 
     private Vector2 _addedForce;
     private bool _canAddMoreForce;
-
+    public bool isMoving;
 	// Use this for initialization
 	void Start ()
     {
@@ -81,6 +81,8 @@ public class ForceTransferController : MonoBehaviour
                 -otherPlayer.GetComponent<GravityController>().gravityDirection
                 + _addedForce);
 
+            isMoving = false;
+
             print("Transfered: " + (defaultForce *
                 Vector2.up *
                 -otherPlayer.GetComponent<GravityController>().gravityDirection
@@ -88,6 +90,14 @@ public class ForceTransferController : MonoBehaviour
 
             _addedForce = Vector2.zero;
 
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            isMoving = true;
         }
     }
 
