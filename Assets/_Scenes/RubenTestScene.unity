@@ -1362,7 +1362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1Object: {fileID: 2138026309}
   p2Object: {fileID: 1347506307}
---- !u!1 &873252670
+  camOffset: 0
+--- !u!1 &893660512
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
