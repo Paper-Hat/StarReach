@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -60,6 +60,6 @@ public class PauseMenu : MonoBehaviour
     //Changes scene from game to main menu
     public void ReturnToMainMenuScene()
     {
-        EditorSceneManager.LoadScene(mainMenu, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        SceneManager.LoadScene(mainMenu, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 }
