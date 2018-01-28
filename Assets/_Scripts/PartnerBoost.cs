@@ -27,9 +27,9 @@ public class PartnerBoost : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            //player = other.gameObject;
-            //oppPlayer = player.GetComponent<TimerController>().otherPlayer;
-            //optc = oppPlayer.GetComponent<TimerController>();
+            player = other.gameObject;
+            oppPlayer = player.GetComponent<TimerController>().otherPlayer;
+            optc = oppPlayer.GetComponent<TimerController>();
             optc.goodTiming = false;
         }
     }
