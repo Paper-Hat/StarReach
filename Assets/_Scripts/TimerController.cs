@@ -7,25 +7,57 @@ using UnityEngine;
 public class TimerController : MonoBehaviour {
     
     
-    public bool goodTiming, press;
+    public bool goodTiming;
     public ForceGrowthController otherForce;
     public GameObject otherPlayer;
     private Coroutine delayCoroutine;
     public float boostForce;
-
+    public GameObject[] boosters;
+    private GameObject theBooster;
+    private ForceTransferController forceController;
 	void Start () {
         goodTiming = false;
         otherForce = otherPlayer.GetComponent<ForceGrowthController>();
+        forceController = GetComponent<ForceTransferController>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl) && delayCoroutine == null)
+        if (otherPlayer.transform.position.y > 0)
         {
-            if (goodTiming)
-                ApplyForce();
-            delayCoroutine = StartCoroutine(CoDelay());
+            if (Input.GetKeyDown(KeyCode.RightControl) || TouchController.doubleTapped && delayCoroutine == null)
+            {
+                if (goodTiming)
+                {
+                    DeactivateActiveBooster();
+                    ApplyForce();
+                }
+
+                delayCoroutine = StartCoroutine(CoDelay());
+            }
+            if (forceController.isMoving)
+            {
+                ActivateAllBoosters();
+            }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.LeftControl) || TouchController.doubleTapped && delayCoroutine == null)
+            {
+                if (goodTiming)
+                {
+                    DeactivateActiveBooster();
+                    ApplyForce();
+                }
+
+                delayCoroutine = StartCoroutine(CoDelay());
+            }
+            if (forceController.isMoving)
+            {
+                ActivateAllBoosters();
+            }
+        }
+      
 	}
     public void ApplyForce()
     {
@@ -35,5 +67,39 @@ public class TimerController : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         delayCoroutine = null;
+    }
+
+    public void DeactivateActiveBooster()
+    {
+        foreach(GameObject obj in boosters)
+        {
+            if(obj == theBooster)
+            {
+                obj.GetComponent<PartnerBoost>().activeSystem.SetActive(false);
+                obj.GetComponent<PartnerBoost>().inactiveSystem.SetActive(true);
+            }
+        }
+    }
+    public void DeactivateInActiveBooster()
+    {
+        foreach (GameObject obj in boosters)
+        {
+            if (obj == theBooster)
+            {
+                obj.GetComponent<PartnerBoost>().activeSystem.SetActive(true);
+                obj.GetComponent<PartnerBoost>().inactiveSystem.SetActive(false);
+            }
+        }
+    }
+    public void SetBooster(GameObject booster)
+    {
+        theBooster = booster;
+    }
+    private void ActivateAllBoosters()
+    {
+        foreach(GameObject obj in boosters)
+        {
+            obj.SetActive(true);
+        }
     }
 }

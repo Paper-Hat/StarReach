@@ -60,13 +60,19 @@ public class ForceTransferController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !_playerOneTapped)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && 
+            !_playerOneTapped && 
+            transform.position.y > 0 &&
+            isMoving)
         {
             _playerOneTapped = true;
             CalculateForceTransfer();
         }
 
-        if (Input.GetKeyDown(KeyCode.RightControl) && !_playerTwoTapped)
+        if (Input.GetKeyDown(KeyCode.RightControl) && 
+            !_playerTwoTapped && 
+            transform.position.y < 0 &&
+            isMoving)
         {
             _playerTwoTapped = true;
             CalculateForceTransfer();
@@ -102,8 +108,6 @@ public class ForceTransferController : MonoBehaviour
                 animatorController.SetInteger("State", 1);
             }
         }
-
-
     }
 
     //transfer force to the other player, 

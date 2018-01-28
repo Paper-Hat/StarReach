@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 //Controls movement for left/right controls
 public class TouchController : MonoBehaviour
 {
+    public static bool doubleTapped;
     //players according to their position in the coordinate system
     public Rigidbody2D topPlayer;
     public Rigidbody2D bottomPlayer;
@@ -35,8 +36,15 @@ public class TouchController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.touchCount >= 2)
+        //Double Tap Detection
+        if (Input.touchCount < 2)
         {
+            doubleTapped = false;
+        }
+
+        if (Input.touchCount >= 2)
+        {
+            doubleTapped = true;
             //Top Player
             if (Camera.main.ScreenToViewportPoint(Input.GetTouch(0).position).y < .5f &&
                 Camera.main.ScreenToViewportPoint(Input.GetTouch(1).position).y < .5f)
@@ -53,54 +61,9 @@ public class TouchController : MonoBehaviour
 
         }
 
-
-        //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)       
-        //    _tapCount++;
-
-        //if (_tapCount > 0)      
-        //    _doubleTapTimer += Time.deltaTime;
-
-        //if (_doubleTapTimer > 0.5f)
-        //{
-        //    _doubleTapTimer = 0f;
-        //    _tapCount = 0;
-        //}
-
-        //if (_tapCount >= 2)
-        //{
-        //    //top player double tap
-        //    if (Camera.main.ScreenToViewportPoint(Input.GetTouch(0).position).y < .5f)
-        //        topPlayer.gameObject.GetComponent<ForceTransferController>().CalculateForceTransfer();
-
-        //    //bottom player double tap
-        //    else
-        //        bottomPlayer.gameObject.GetComponent<ForceTransferController>().CalculateForceTransfer();
-        //    _doubleTapTimer = 0.0f;
-        //    _tapCount = 0;
-        //}
-
-
-        
-        //for (int i = 0; i < Input.touchCount; ++i)
-        //{
-        //    if (Input.GetTouch(i).phase == TouchPhase.Began)
-        //    {
-        //        if (Input.GetTouch(i).tapCount == 2)
-        //        {
-        //            //top player double tap
-        //            if (Camera.main.ScreenToViewportPoint(Input.GetTouch(i).position).y < .5f)
-        //                topPlayer.gameObject.GetComponent<ForceTransferController>().CalculateForceTransfer();
-
-        //            //bottom player double tap
-        //            else
-        //                bottomPlayer.gameObject.GetComponent<ForceTransferController>().CalculateForceTransfer();
-        //        }
-        //    }
-        //}
-
+        // Left/Right Movement
         if (Mathf.Abs(topPlayer.transform.position.y) > minHeightForMovement || Mathf.Abs(bottomPlayer.transform.position.y) > minHeightForMovement)
-        {
-           
+        {       
             if(Input.touchCount == 1)
             {
                 //Top Player
@@ -132,62 +95,8 @@ public class TouchController : MonoBehaviour
 
                     else
                         bottomPlayer.velocity = new Vector2(0, bottomPlayer.velocity.y);
-
-
                 }
             }
-
-            //for (int i = 0; i < Input.touchCount; i++)
-            //{
-
-            //    if (!EventSystem.current.IsPointerOverGameObject(i))
-            //    {
-            //        if (Input.GetTouch(i).phase == TouchPhase.Stationary)
-            //        {
-            //            //Top player touch detection
-            //            if (Camera.main.ScreenToViewportPoint(Input.GetTouch(i).position).y < .5f)
-            //            {
-            //                if (!_topAlreadyMoving)
-            //                {
-            //                    if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)
-            //                        topPlayer.MoveRight();
-
-            //                    else if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x < 0)
-            //                        topPlayer.MoveLeft();
-
-            //                    _topAlreadyMoving = true;
-            //                }
-            //            }
-
-            //            //Bottom player touch detection
-            //            else
-            //            {
-            //                if (!_botAlreadyMoving)
-            //                {
-            //                    if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)
-            //                        bottomPlayer.MoveRight();
-
-            //                    else if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x < 0)
-            //                        bottomPlayer.MoveLeft();
-
-            //                    _botAlreadyMoving = true;
-            //                }
-            //            }
-            //        }
-
-            //        //reset movement booleans on touch ended
-            //        if (Input.GetTouch(i).phase == TouchPhase.Ended)
-            //        {
-            //            //top player released 
-            //            if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).y > 0)
-            //                _topAlreadyMoving = false;
-
-            //            //bottom player released
-            //            else
-            //                _botAlreadyMoving = false;
-            //        }
-            //    }
-            //}
         }
     }
 
