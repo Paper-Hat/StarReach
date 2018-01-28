@@ -32,15 +32,19 @@ public class TouchController : MonoBehaviour
                 if (Input.GetTouch(i).phase == TouchPhase.Stationary)
                 {
                     //Top player touch detection
-                    if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).y > 0)
+                    if (Camera.main.ScreenToViewportPoint(Input.GetTouch(i).position).y < .5f)
                     {
                         if (!_topAlreadyMoving)
                         {
                             if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)
+                            {
                                 topPlayer.MoveRight();
+                            }
 
-                            else
+                            else if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x < 0)
+                            {
                                 topPlayer.MoveLeft();
+                            }
 
                             _topAlreadyMoving = true;
                         }
@@ -52,10 +56,14 @@ public class TouchController : MonoBehaviour
                         if (!_botAlreadyMoving)
                         {
                             if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)
+                            {
                                 bottomPlayer.MoveRight();
+                            }
 
-                            else
+                            else if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x < 0)
+                            {
                                 bottomPlayer.MoveLeft();
+                            }
 
                             _botAlreadyMoving = true;
                         }
