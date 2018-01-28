@@ -7,7 +7,7 @@ using UnityEngine;
 public class TimerController : MonoBehaviour {
     
     
-    public bool goodTiming, press;
+    public bool goodTiming;
     public ForceGrowthController otherForce;
     public GameObject otherPlayer;
     private Coroutine delayCoroutine;
@@ -23,20 +23,41 @@ public class TimerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl) && delayCoroutine == null)
+        if (otherPlayer.transform.position.y > 0)
         {
-            if (goodTiming)
+            if (Input.GetKeyDown(KeyCode.RightControl) || TouchController.doubleTapped && delayCoroutine == null)
             {
-                DeactivateActiveBooster();
-                ApplyForce();
+                if (goodTiming)
+                {
+                    DeactivateActiveBooster();
+                    ApplyForce();
+                }
+
+                delayCoroutine = StartCoroutine(CoDelay());
             }
-                
-            delayCoroutine = StartCoroutine(CoDelay());
+            if (forceController.isMoving)
+            {
+                ActivateAllBoosters();
+            }
         }
-        if(forceController.isMoving)
+        else
         {
-            ActivateAllBoosters();
+            if (Input.GetKeyDown(KeyCode.LeftControl) || TouchController.doubleTapped && delayCoroutine == null)
+            {
+                if (goodTiming)
+                {
+                    DeactivateActiveBooster();
+                    ApplyForce();
+                }
+
+                delayCoroutine = StartCoroutine(CoDelay());
+            }
+            if (forceController.isMoving)
+            {
+                ActivateAllBoosters();
+            }
         }
+      
 	}
     public void ApplyForce()
     {
