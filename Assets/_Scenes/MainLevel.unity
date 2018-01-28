@@ -24124,7 +24124,7 @@ MonoBehaviour:
   gameManager: {fileID: 247177376}
   sfx: {fileID: 2041353130}
   otherPlayer: {fileID: 2138026312}
-  forceMultiplier: 150
+  forceMultiplier: 70
   firstTransferHeight: 2
   firstTransferRatio: 1
   secondTransferHeight: 3
@@ -41578,7 +41578,7 @@ MonoBehaviour:
   gameManager: {fileID: 247177376}
   sfx: {fileID: 2041353130}
   otherPlayer: {fileID: 1347506310}
-  forceMultiplier: 150
+  forceMultiplier: 70
   firstTransferHeight: 2
   firstTransferRatio: 1
   secondTransferHeight: 3
