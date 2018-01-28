@@ -29,7 +29,11 @@ public class ForceTransferController : MonoBehaviour
     //Reference to the animation controller
     public Animator animatorController;
 
+    //time to pause after impact before transmitting the force
+    public float pauseTime;
+
     private Vector2 _addedForce;
+    private static bool _transmitting;
     private bool _playerOneTapped;
     private bool _playerTwoTapped;
     private Rigidbody2D _rb2d;
@@ -128,31 +132,33 @@ public class ForceTransferController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Floor"))
+        if(other.gameObject.CompareTag("Floor") && !_transmitting)
         {
-            otherPlayer.AddForce(
-                defaultForce * 
-                Vector2.up *
-                -otherPlayer.GetComponent<GravityController>().gravityDirection
-                + _addedForce);
-
-            isMoving = false;
-
-            /*print("Transfered: " + (defaultForce *
-                Vector2.up *
-                -otherPlayer.GetComponent<GravityController>().gravityDirection
-                + _addedForce));*/
-
-            _addedForce = Vector2.zero;
-
-            if (_playerOneTapped)
-                _playerOneTapped = false;
-
-            if (_playerTwoTapped)
-                _playerTwoTapped = false;
-
-
+            _transmitting = true;
+            StartCoroutine(TransmitForce());  
         }
+    }
+
+    public IEnumerator TransmitForce()
+    {
+        yield return new WaitForSeconds(pauseTime);
+        otherPlayer.AddForce(
+              defaultForce *
+              Vector2.up *
+              -otherPlayer.GetComponent<GravityController>().gravityDirection
+              + _addedForce);
+
+        isMoving = false;
+
+        _addedForce = Vector2.zero;
+
+        if (_playerOneTapped)
+            _playerOneTapped = false;
+
+        if (_playerTwoTapped)
+            _playerTwoTapped = false;
+
+        _transmitting = false;
     }
 
     public void OnCollisionExit2D(Collision2D other)
