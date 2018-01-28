@@ -7,7 +7,7 @@ public class WinCondition : MonoBehaviour
     public bool win, doneSlow, p1;
     private float oldGrav;
     public Rigidbody2D rBod;
-    public GameObject player;
+    private GameObject player;
     public GameObject star;
     private Coroutine sco;
     private GravityController gctrl;
