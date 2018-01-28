@@ -2296,11 +2296,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 2138026312}
   forceMultiplier: 100
-  firstTransferHeight: 1
+  firstTransferHeight: 2
   firstTransferRatio: 1
-  secondTransferHeight: 2
+  secondTransferHeight: 3
   secondTransferRatio: 0.66
-  thirdTransferHeight: 3
+  thirdTransferHeight: 4
   thirdTransferRatio: 0.33
   defaultForce: 200
   isMoving: 0
@@ -3738,11 +3738,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 1347506310}
   forceMultiplier: 100
-  firstTransferHeight: 1
+  firstTransferHeight: 2
   firstTransferRatio: 1
-  secondTransferHeight: 2
+  secondTransferHeight: 3
   secondTransferRatio: 0.66
-  thirdTransferHeight: 3
+  thirdTransferHeight: 4
   thirdTransferRatio: 0.33
   defaultForce: 200
   isMoving: 0
