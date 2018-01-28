@@ -6,6 +6,8 @@ using UnityEngine;
 //The closer they are to the floor when pressed, more of the accumulated force of the other player will be used
 public class ForceTransferController : MonoBehaviour
 {
+    public static bool canTransfer;
+
     //The other player to transfer force to 
     public Rigidbody2D otherPlayer;
     //used to scale the the force applied
@@ -31,15 +33,17 @@ public class ForceTransferController : MonoBehaviour
     private bool _playerOneTapped;
     private bool _playerTwoTapped;
     private Rigidbody2D _rb2d;
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start()
     {
         _addedForce = Vector2.zero;
         _rb2d = GetComponent<Rigidbody2D>();
+        canTransfer = true;
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && !_playerOneTapped)
         {
@@ -52,8 +56,8 @@ public class ForceTransferController : MonoBehaviour
             _playerTwoTapped = true;
             CalculateForceTransfer();
         }
-        
-        if(this.name.Contains("Top"))
+
+        if (this.name.Contains("Top"))
         {
             if (_rb2d.velocity.y < 0.01f && _rb2d.velocity.y > -0.01f)
             {
@@ -68,7 +72,7 @@ public class ForceTransferController : MonoBehaviour
                 animatorController.SetInteger("State", 2);
             }
         }
-        else if(this.name.Contains("Bottom"))
+        else if (this.name.Contains("Bottom"))
         {
             if (_rb2d.velocity.y < 0.01f && _rb2d.velocity.y > -0.01f)
             {
@@ -83,7 +87,7 @@ public class ForceTransferController : MonoBehaviour
                 animatorController.SetInteger("State", 1);
             }
         }
-        
+
 
     }
 
@@ -91,8 +95,11 @@ public class ForceTransferController : MonoBehaviour
     //amount of accumulated force transfered depends on how close falling player is to the ground on key/button press
     public void CalculateForceTransfer()
     {
-        if (isMoving)
+        if (isMoving && canTransfer)
         {
+            canTransfer = false;
+            StartCoroutine(ResetTransfer());
+
             float transferPercentage = 0;
 
             if (Mathf.Abs(transform.position.y) < firstTransferHeight)
@@ -104,7 +111,6 @@ public class ForceTransferController : MonoBehaviour
             else if (Mathf.Abs(transform.position.y) < thirdTransferHeight)
                 transferPercentage = thirdTransferRatio;
 
-
             _addedForce =
                 transferPercentage *
                 Vector2.up *
@@ -112,8 +118,12 @@ public class ForceTransferController : MonoBehaviour
                 -otherPlayer.GetComponent<GravityController>().gravityDirection *
                 GetComponent<ForceGrowthController>().maxHeightMagnitude;
         }
-        
+    }
 
+    public IEnumerator ResetTransfer()
+    {
+        yield return new WaitForSeconds(1);
+        canTransfer = true;
     }
 
     public void OnCollisionEnter2D(Collision2D other)

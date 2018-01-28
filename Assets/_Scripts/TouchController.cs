@@ -36,16 +36,12 @@ public class TouchController : MonoBehaviour
                     {
                         if (!_topAlreadyMoving)
                         {
-                            if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)
-                            {
+                            if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)                        
                                 topPlayer.MoveRight();
-                            }
-
+                            
                             else if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x < 0)
-                            {
                                 topPlayer.MoveLeft();
-                            }
-
+                            
                             _topAlreadyMoving = true;
                         }
                     }
@@ -55,16 +51,12 @@ public class TouchController : MonoBehaviour
                     {
                         if (!_botAlreadyMoving)
                         {
-                            if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)
-                            {
+                            if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x > 0)                          
                                 bottomPlayer.MoveRight();
-                            }
-
-                            else if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x < 0)
-                            {
+                            
+                            else if (Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position).x < 0)                           
                                 bottomPlayer.MoveLeft();
-                            }
-
+                            
                             _botAlreadyMoving = true;
                         }
                     }
@@ -80,7 +72,6 @@ public class TouchController : MonoBehaviour
                     //bottom player released
                     else
                         _botAlreadyMoving = false;
-
                 }
             }
         }
