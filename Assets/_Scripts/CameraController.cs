@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour {
                 step += stepGain;
             }
             
-            Camera.main.transform.position = new Vector3(p1Object.transform.position.x, Mathf.Lerp(GetComponent<Transform>().position.y, transferPosY, step), -10);
+            Camera.main.transform.position = new Vector3(camOriginPoint.x, Mathf.Lerp(GetComponent<Transform>().position.y, transferPosY, step), -10);
            
         }
         else if (_p2ForceController.isMoving)
@@ -98,7 +98,7 @@ public class CameraController : MonoBehaviour {
             //Debug.Log("vel - " + p2Object.GetComponent<Rigidbody2D>().velocity.y);
             //transferPosY = p2Object.transform.position.y - camOffset;
 
-            Camera.main.transform.position = new Vector3(p2Object.transform.position.x, Mathf.Lerp(Mathf.Abs(GetComponent<Transform>().position.y), transferPosY, step) * -1, -10);//p2Object.transform.position.y - 2, -10);
+            Camera.main.transform.position = new Vector3(camOriginPoint.x, Mathf.Lerp(Mathf.Abs(GetComponent<Transform>().position.y), transferPosY, step) * -1, -10);//p2Object.transform.position.y - 2, -10);
 
             //step += stepGain;
         }
