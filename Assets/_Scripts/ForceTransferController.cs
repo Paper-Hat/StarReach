@@ -6,6 +6,12 @@ using UnityEngine;
 //The closer they are to the floor when pressed, more of the accumulated force of the other player will be used
 public class ForceTransferController : MonoBehaviour
 {
+    //Manages sound effects
+    public SFXManager sfx;
+    //To hold reference to the strength of the sfx to be player
+    //from 1 -> 3+  from trash to strong
+    private int soundType;
+
     public static bool canTransfer;
     public enum TransmissionRating{Optimal, SubOptimal, Trash, Zero };
     public static TransmissionRating lastTransmissionRating;
@@ -43,6 +49,7 @@ public class ForceTransferController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        soundType = 3;
         _addedForce = Vector2.zero;
         _rb2d = GetComponent<Rigidbody2D>();
         canTransfer = true;
@@ -160,7 +167,29 @@ public class ForceTransferController : MonoBehaviour
 
     public IEnumerator TransmitForce()
     {
+        if(lastTransmissionRating == TransmissionRating.Trash)
+        {
+            soundType = 1;
+            Debug.Log("Rating = 1");
+        }
+        else if(lastTransmissionRating == TransmissionRating.SubOptimal)
+        {
+            soundType = 2;
+            Debug.Log("Rating = 2");
+        }
+        else if(lastTransmissionRating == TransmissionRating.Optimal)
+        {
+            soundType = 3;
+            Debug.Log("Rating = 3");
+        }
+
+        //sfx on land
+        sfx.PlayTransmission(soundType);
+
         yield return new WaitForSeconds(pauseTime);
+
+        sfx.PlayReceive(soundType);
+
         otherPlayer.AddForce(
               defaultForce *
               Vector2.up *
@@ -178,6 +207,8 @@ public class ForceTransferController : MonoBehaviour
             _playerTwoTapped = false;
 
         _transmitting = false;
+
+        soundType = 3;
     }
 
     public void OnCollisionExit2D(Collision2D other)
