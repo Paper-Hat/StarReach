@@ -167,11 +167,9 @@ public class ForceTransferController : MonoBehaviour
 
     public IEnumerator TransmitForce() 
     {
-<<<<<<< HEAD
         VibrationManager.Vibrate(500);
         yield return new WaitForSeconds(pauseTime);
         VibrationManager.Cancel();
-=======
         if(lastTransmissionRating == TransmissionRating.Trash)
         {
             soundType = 1;
@@ -194,7 +192,6 @@ public class ForceTransferController : MonoBehaviour
         yield return new WaitForSeconds(pauseTime);
 
         sfx.PlayReceive(soundType);
->>>>>>> 74f130d40925b298e50049b31b962ab670b84ce6
 
         otherPlayer.AddForce(
               defaultForce *
