@@ -23,7 +23,7 @@ public class HeightRulerController : MonoBehaviour {
 	
     //Continually clamp player height to max and min values set in slider and current values on FixedUpdate
 	void FixedUpdate () {
-        height = Mathf.Clamp(Mathf.Abs(playerObject.transform.position.y), minHeight, maxHeight) + (maxHeight / 2);
+        height = Mathf.Clamp(Mathf.Abs(playerObject.transform.position.y), minHeight, maxHeight);
         UpdateHeightRuler();
         
         //heightRuler.value = height;
