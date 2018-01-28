@@ -168,26 +168,28 @@ public class ForceTransferController : MonoBehaviour
     public IEnumerator TransmitForce() 
     {
         VibrationManager.Vibrate(500);
-        yield return new WaitForSeconds(pauseTime);
-        VibrationManager.Cancel();
-        if(lastTransmissionRating == TransmissionRating.Trash)
+
+        if (lastTransmissionRating == TransmissionRating.Trash)
         {
             soundType = 1;
-            Debug.Log("Rating = 1");
+            //Debug.Log("Rating = 1");
         }
-        else if(lastTransmissionRating == TransmissionRating.SubOptimal)
+        else if (lastTransmissionRating == TransmissionRating.SubOptimal)
         {
             soundType = 2;
-            Debug.Log("Rating = 2");
+            //Debug.Log("Rating = 2");
         }
-        else if(lastTransmissionRating == TransmissionRating.Optimal)
+        else if (lastTransmissionRating == TransmissionRating.Optimal)
         {
             soundType = 3;
-            Debug.Log("Rating = 3");
+            //Debug.Log("Rating = 3");
         }
 
         //sfx on land
         sfx.PlayTransmission(soundType);
+
+        yield return new WaitForSeconds(pauseTime);
+        VibrationManager.Cancel();
 
         yield return new WaitForSeconds(pauseTime);
 

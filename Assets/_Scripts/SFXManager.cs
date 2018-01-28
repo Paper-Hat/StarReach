@@ -21,7 +21,7 @@ public class SFXManager : MonoBehaviour
     //3 - from large height           3 - well timed 
     public void PlayReceive(int q)
     {
-        Debug.Log("transmission, zone 2 >temp< in sfxmanager");
+        //Debug.Log("transmission, zone 2 >temp< in sfxmanager");
         //if(level == 1 || level == 2)
         if (audioManager.p1Object.transform.position.y < audioManager.goalItemObject.transform.position.y * 2/3 ||
             Mathf.Abs(audioManager.p2Object.transform.position.y) < audioManager.goalItemObject.transform.position.y * 2/3)
@@ -32,11 +32,13 @@ public class SFXManager : MonoBehaviour
             }
             else if (q == 2)
             {
-                Debug.Log("ok hit, zone 1-2  >temp< in sfxmanager");
+                //Debug.Log("ok ");
+                hardReceive.Play();//Debug.Log("ok hit, zone 1-2  >temp< in sfxmanager");
             }
             else if (q == 3)
             {
-                Debug.Log("perfect hit, zone 1-2 >temp< in sfxmanager");
+                //Debug.Log("ok 2");
+                hardReceive.Play();//Debug.Log("perfect hit, zone 1-2 >temp< in sfxmanager");
             }
         }
         else if(audioManager.p1Object.transform.position.y > audioManager.goalItemObject.transform.position.y * 2 / 3 ||
@@ -48,7 +50,7 @@ public class SFXManager : MonoBehaviour
             }
             else if (q == 2)
             {
-                Debug.Log("ok hit, zone 3  >temp< in sfxmanager");
+                hardReceive.Play();//Debug.Log("ok hit, zone 3  >temp< in sfxmanager");
             }
             else if (q == 3)
             {
@@ -65,11 +67,11 @@ public class SFXManager : MonoBehaviour
     {
         if (level == 1)
         {
-            Debug.Log("transmission, zone 1 >temp< in sfxmanager");
+            hardTransmission.Play();//Debug.Log("transmission, zone 1 >temp< in sfxmanager");
         }
         else if (level == 2)
         {
-            Debug.Log("transmission, zone 2 >temp< in sfxmanager");
+            hardTransmission.Play();//Debug.Log("transmission, zone 2 >temp< in sfxmanager");
         }
         else if (level == 3)
         {
