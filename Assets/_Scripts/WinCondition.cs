@@ -11,12 +11,12 @@ public class WinCondition : MonoBehaviour
     public GameObject star;
     private Coroutine sco;
     private GravityController gctrl;
-    private float stopYPos;
+    public float stopYPos;
     Vector3 newStarPosition, offset;
 
     float wantedTime = 1;
     float currentTime = 0f;
-    private bool _starIsChild;
+    public bool _starIsChild;
     void Awake()
     {
         stopYPos = 0;

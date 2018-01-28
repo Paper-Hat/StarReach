@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
-
+    public GameManagerController gameManager;
     public bool p1Turn;
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (gameManager.gameFinished)
+        {
+            return;
+        }
+            
+
         if (player1.GetComponent<ForceTransferController>().isMoving)
         {
             player1.GetComponent<ForceTransferController>().enabled = true;

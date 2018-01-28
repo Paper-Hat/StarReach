@@ -6,6 +6,7 @@ using UnityEngine;
 //The closer they are to the floor when pressed, more of the accumulated force of the other player will be used
 public class ForceTransferController : MonoBehaviour
 {
+    public GameManagerController gameManager;
     //Manages sound effects
     public SFXManager sfx;
     //To hold reference to the strength of the sfx to be player
@@ -60,6 +61,9 @@ public class ForceTransferController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (gameManager.gameFinished)
+            //return;
+
         if (Input.GetKeyDown(KeyCode.LeftControl) && 
             !_playerOneTapped && 
             transform.position.y > 0 &&
@@ -83,6 +87,8 @@ public class ForceTransferController : MonoBehaviour
             if (_rb2d.velocity.y < 0.01f && _rb2d.velocity.y > -0.01f)
             {
                 animatorController.SetInteger("State", 3);
+                if (gameManager.gameFinished)
+                    animatorController.SetBool("isGameFinished", true);
             }
             if (_rb2d.velocity.y > 0.01f)
             {
@@ -162,7 +168,7 @@ public class ForceTransferController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Floor") && !_transmitting)
+        if(other.gameObject.CompareTag("Floor") && !_transmitting && !gameManager.gameFinished)
         {
             _transmitting = true;
             StartCoroutine(TransmitForce());  

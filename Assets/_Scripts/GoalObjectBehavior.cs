@@ -7,9 +7,10 @@ public class GoalObjectBehavior : MonoBehaviour {
     public GameObject goalObj,playerObj;
     public ParticleSystem pSystem;
     public WinCondition winConditionObject;
+    public GameManagerController gameManager;
     private Coroutine delayCoroutine;
     private bool _isChild;
-    public bool _isp1;
+    private bool _isp1;
      void Update()
     {
         if(_isChild)
@@ -34,6 +35,7 @@ public class GoalObjectBehavior : MonoBehaviour {
             pSystem.Play();
             winConditionObject.SetBoolStarIsChild();
             _isChild = true;
+            gameManager.gameFinished = true;
         }
        
     }
