@@ -7,7 +7,8 @@ using UnityEngine;
 public class ForceTransferController : MonoBehaviour
 {
     public static bool canTransfer;
-    public enum TransmissionRating{Optimal, SubOptimal, Trash };
+    public enum TransmissionRating{Optimal, SubOptimal, Trash, Zero };
+    public static TransmissionRating lastTransmissionRating;
 
     //The other player to transfer force to 
     public Rigidbody2D otherPlayer;
@@ -46,6 +47,7 @@ public class ForceTransferController : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         canTransfer = true;
         _transmitting = false;
+        lastTransmissionRating = TransmissionRating.Zero;
     }
 
     // Update is called once per frame
@@ -109,13 +111,28 @@ public class ForceTransferController : MonoBehaviour
             float transferPercentage = 0;
 
             if (Mathf.Abs(transform.position.y) < firstTransferHeight)
+            {
                 transferPercentage = firstTransferRatio;
+                lastTransmissionRating = TransmissionRating.Optimal;
+            }
 
             else if (Mathf.Abs(transform.position.y) < secondTransferHeight)
+            {
                 transferPercentage = secondTransferRatio;
+                lastTransmissionRating = TransmissionRating.SubOptimal;
+            }
 
             else if (Mathf.Abs(transform.position.y) < thirdTransferHeight)
+            {
                 transferPercentage = thirdTransferRatio;
+                lastTransmissionRating = TransmissionRating.Trash;
+            }
+
+            else
+            {
+                transferPercentage = 0;
+                lastTransmissionRating = TransmissionRating.Zero;
+            }
 
             _addedForce =
                 transferPercentage *
