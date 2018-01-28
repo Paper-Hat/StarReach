@@ -158,9 +158,12 @@ public class ForceTransferController : MonoBehaviour
         }
     }
 
-    public IEnumerator TransmitForce()
+    public IEnumerator TransmitForce() 
     {
+        VibrationManager.Vibrate(500);
         yield return new WaitForSeconds(pauseTime);
+        VibrationManager.Cancel();
+
         otherPlayer.AddForce(
               defaultForce *
               Vector2.up *
