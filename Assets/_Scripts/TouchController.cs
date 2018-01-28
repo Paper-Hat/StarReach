@@ -36,6 +36,7 @@ public class TouchController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        //Double Tap Detection
         if (Input.touchCount < 2)
         {
             doubleTapped = false;
@@ -60,9 +61,9 @@ public class TouchController : MonoBehaviour
 
         }
 
+        // Left/Right Movement
         if (Mathf.Abs(topPlayer.transform.position.y) > minHeightForMovement || Mathf.Abs(bottomPlayer.transform.position.y) > minHeightForMovement)
-        {
-           
+        {       
             if(Input.touchCount == 1)
             {
                 //Top Player
