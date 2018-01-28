@@ -6,6 +6,7 @@ public class SFXManager : MonoBehaviour
 {
     public AudioSource hardReceive, hardTransmission, receiveFail;
     public AudioManager audioManager;
+    public AudioClip starGet;
 
     void Start()
     {
@@ -82,5 +83,10 @@ public class SFXManager : MonoBehaviour
     public void PlayReceiveFail()
     {
         receiveFail.Play();
+    }
+
+    public void PlayStar()
+    {
+        hardReceive.PlayOneShot(starGet);
     }
 }
