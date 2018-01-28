@@ -762,16 +762,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 435489102}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 4, y: 453.4, z: 0}
+  m_LocalPosition: {x: 4, y: 426, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1378505302}
   m_Father: {fileID: 179851082}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 453.4}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 4, y: 376}
   m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435489104
@@ -1350,8 +1350,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 701590663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 720, y: 1480, z: 0}
-  m_LocalScale: {x: 2.9799328, y: 2.9799328, z: 2.9799328}
+  m_LocalPosition: {x: 540, y: 960, z: 0}
+  m_LocalScale: {x: 2.0784612, y: 2.0784612, z: 2.0784612}
   m_Children:
   - {fileID: 893660513}
   - {fileID: 1769148825}
@@ -1461,6 +1461,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1Object: {fileID: 2138026309}
   p2Object: {fileID: 1347506307}
+  camOffset: 0
+  stepGain: 0
+  camOriginPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &728736664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,7 +1625,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 893660512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 241.61618, y: 0, z: 0}
+  m_LocalPosition: {x: 259.8076, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 273315904}
@@ -1908,7 +1911,7 @@ Transform:
   m_GameObject: {fileID: 1157679989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.056640625}
-  m_LocalScale: {x: 60, y: 0.3, z: 1}
+  m_LocalScale: {x: 60, y: 4.84, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2164,9 +2167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 2138026312}
   forceMultiplier: 100
-  firstTransferHeight: 0.5
+  firstTransferHeight: 1
   firstTransferRatio: 1
-  secondTransferHeight: 1.5
+  secondTransferHeight: 2
   secondTransferRatio: 0.66
   thirdTransferHeight: 3
   thirdTransferRatio: 0.33
@@ -2198,7 +2201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidB: {fileID: 1347506310}
-  movementSpeed: 20
+  movementSpeed: 5
 --- !u!1 &1370641622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,7 +2963,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1769148824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 241.61618, y: 0, z: 0}
+  m_LocalPosition: {x: 259.8076, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1020864264}
@@ -3230,16 +3233,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1894343902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 1078.5, z: 0}
+  m_LocalPosition: {x: 4, y: 1101, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 973750817}
   m_Father: {fileID: 1809325247}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 1078.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 4, y: 1151}
   m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1894343904
@@ -3507,7 +3510,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2138026309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.37, z: -0.056640625}
+  m_LocalPosition: {x: 0, y: 0.96, z: -0.056640625}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 537020740}
@@ -3586,9 +3589,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherPlayer: {fileID: 1347506310}
   forceMultiplier: 100
-  firstTransferHeight: 0.5
+  firstTransferHeight: 1
   firstTransferRatio: 1
-  secondTransferHeight: 1.5
+  secondTransferHeight: 2
   secondTransferRatio: 0.66
   thirdTransferHeight: 3
   thirdTransferRatio: 0.33
@@ -3620,7 +3623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidB: {fileID: 2138026312}
-  movementSpeed: 20
+  movementSpeed: 5
 --- !u!1 &2140517963
 GameObject:
   m_ObjectHideFlags: 0
