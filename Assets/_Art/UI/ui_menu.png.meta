@@ -1,0 +1,713 @@
+fileFormatVersion: 2
+guid: d51f0fe5b068fb849a346113fedbf3a9
+timeCreated: 1517132806
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ui_menu
+    21300002: binary1
+    21300004: binary3
+    21300006: btnBack0
+    21300008: btnBack1
+    21300010: btnFlash
+    21300012: btnNo0
+    21300014: btnNo1
+    21300016: btnOptions0
+    21300018: btnOptions1
+    21300020: btnPlayAgain0
+    21300022: btnPlayAgain1
+    21300024: btnQuitGame0
+    21300026: btnQuitGame1
+    21300028: btnResumeGame0
+    21300030: btnResumeGame1
+    21300032: btnReturnToTitle0
+    21300034: btnReturnToTitle1
+    21300036: btnStartGame0
+    21300038: btnStartGame1
+    21300040: btnYes0
+    21300042: btnYes1
+    21300044: logoStar
+    21300046: logoStarreach
+    21300048: optionsFooterCurve
+    21300050: optionsFooterStars
+    21300052: optionsHeaderCurve
+    21300054: optionsHeaderStraight
+    21300056: optionsSpinStar
+    21300058: optionsTitle
+    21300060: sliderFlash
+    21300062: sliderForeground
+    21300064: spinStarTrail0
+    21300066: spinStarTrail1
+    21300068: spinStarTrail2
+    21300070: spinStarTrail3
+    21300072: sliderOrangeBody
+    21300074: sliderOrangeTip
+    21300076: sliderPinkBody
+    21300078: sliderPinkTip
+    21300080: sliderPurpleBody
+    21300082: sliderPurpleTip
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: binary1
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 778
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: binary3
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 1150
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnBack0
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 717
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnBack1
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 653
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnFlash
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 781
+        width: 900
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnNo0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 589
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnNo1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 525
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnOptions0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 461
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnOptions1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 397
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnPlayAgain0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 333
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnPlayAgain1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 269
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnQuitGame0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 205
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnQuitGame1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 141
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnResumeGame0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 77
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnResumeGame1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 13
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnReturnToTitle0
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 781
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnReturnToTitle1
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 717
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnStartGame0
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 653
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnStartGame1
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 589
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnYes0
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 525
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: btnYes1
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 461
+        width: 868
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: logoStar
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1026
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: logoStarreach
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1057
+        width: 576
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: optionsFooterCurve
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1690
+        width: 720
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: optionsFooterStars
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1319
+        width: 562
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: optionsHeaderCurve
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 845
+        width: 376
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: optionsHeaderStraight
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 923
+        width: 309
+        height: 1123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: optionsSpinStar
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 1873
+        width: 182
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: optionsTitle
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1155
+        width: 659
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderFlash
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 1604
+        width: 98
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 42, z: 0, w: 41}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderForeground
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 662
+        width: 170
+        height: 1384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderOrangeBody
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 657
+        width: 98
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderOrangeTip
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 881
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderPinkBody
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 8
+        width: 98
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderPinkTip
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 1831
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderPurpleBody
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 2043
+        width: 98
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderPurpleTip
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 2006
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: spinStarTrail0
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 845
+        width: 104
+        height: 1201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: spinStarTrail1
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 845
+        width: 104
+        height: 1201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: spinStarTrail2
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 845
+        width: 104
+        height: 1201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: spinStarTrail3
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 845
+        width: 104
+        height: 1201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
