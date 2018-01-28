@@ -37,7 +37,7 @@ public class HeightRulerController : MonoBehaviour {
         if (height > highestReached)
         {
             highestReached = height;
-            highScoreText.text = (int)highestReached.ToString();
+            highScoreText.text = ((int)highestReached).ToString();
         }
             
     }
