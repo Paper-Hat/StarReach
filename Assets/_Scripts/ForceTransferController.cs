@@ -37,7 +37,7 @@ public class ForceTransferController : MonoBehaviour
     public bool isMoving;
     //Reference to the animation controller
     public Animator animatorController;
-
+    public ParticleSystem pSystem;
     //time to pause after impact before transmitting the force
     public float pauseTime;
 
@@ -104,6 +104,8 @@ public class ForceTransferController : MonoBehaviour
             if (_rb2d.velocity.y < 0.01f && _rb2d.velocity.y > -0.01f)
             {
                 animatorController.SetInteger("State", 3);
+                if (gameManager.gameFinished)
+                    animatorController.SetBool("isGameFinished", true);
             }
             if (_rb2d.velocity.y > 0.01f)
             {
@@ -171,6 +173,7 @@ public class ForceTransferController : MonoBehaviour
         if(other.gameObject.CompareTag("Floor") && !_transmitting && !gameManager.gameFinished)
         {
             _transmitting = true;
+            pSystem.Play();
             StartCoroutine(TransmitForce());  
         }
     }

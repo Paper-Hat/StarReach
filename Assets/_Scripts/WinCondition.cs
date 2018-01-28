@@ -7,7 +7,7 @@ public class WinCondition : MonoBehaviour
     public bool win, doneSlow, p1;
     private float oldGrav;
     public Rigidbody2D rBod;
-    private GameObject player;
+    public GameObject player;
     public GameObject star;
     private Coroutine sco;
     private GravityController gctrl;
@@ -40,6 +40,7 @@ public class WinCondition : MonoBehaviour
             gctrl = player.GetComponent<GravityController>();
             gctrl.gravityStrength = 0;
             player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Debug.Log("TEST2");
             sco = StartCoroutine(SlowDown());
         }        
 
@@ -48,7 +49,11 @@ public class WinCondition : MonoBehaviour
     void FixedUpdate()
     {
         if(stopYPos != 0 && _starIsChild == false)
+        {
+            //Debug.Log("TEST");
             player.transform.position = new Vector3(player.transform.position.x, stopYPos, -1);
+        }
+            
 
         if (doneSlow)
         {
@@ -74,7 +79,7 @@ public class WinCondition : MonoBehaviour
                 yield return null;//new WaitForSeconds(.1f);
             }
         }
-        else
+        /*else
         {
             while (rBod.velocity.y >= 0)
             {
@@ -82,7 +87,7 @@ public class WinCondition : MonoBehaviour
                 Debug.Log("p2 vel = " + rBod.velocity);
                 yield return null;//new WaitForSeconds(.1f);
             }
-        }
+        }*/
 
         oldGrav = gctrl.gravityStrength;
         gctrl.gravityStrength = 0f;
@@ -93,6 +98,7 @@ public class WinCondition : MonoBehaviour
         doneSlow = true;
         yield return new WaitForSeconds(1f);
         sco = null;
+        Debug.Log("DEAD");
     }
     public void SetBoolStarIsChild()
     {
