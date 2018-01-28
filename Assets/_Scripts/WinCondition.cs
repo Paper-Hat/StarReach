@@ -13,6 +13,7 @@ public class WinCondition : MonoBehaviour
     private GravityController gctrl;
     public float stopYPos;
     Vector3 newStarPosition, offset;
+    public SFXManager SoundEffects;
 
     float wantedTime = 1;
     float currentTime = 0f;
@@ -62,6 +63,8 @@ public class WinCondition : MonoBehaviour
                 currentTime += Time.deltaTime;
                 if (star.transform.position != newStarPosition)
                     star.transform.position = Vector3.Lerp(star.transform.position, newStarPosition, currentTime / wantedTime);
+
+                SoundEffects.PlayStar();
                 gctrl.gravityStrength = 10f;
             }
         }
