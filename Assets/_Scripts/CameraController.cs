@@ -26,9 +26,9 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        camOffset = 2;
+        camOffset = 1;
         step = 0;
-        stepGain = .002555f;
+        stepGain = .001f;
 
         camOriginPoint = new Vector3(0, 0, -10);
 
@@ -61,6 +61,7 @@ public class CameraController : MonoBehaviour {
             else
                 transferPosY = p1Object.transform.position.y + camOffset;
 
+            //number to the right is the bounding number before the camera starts to follow the player
             if(p1Object.GetComponent<ForceGrowthController>().contactPoint.position.y < 2)
             {
                 transferPosY = camOriginPoint.y;
@@ -89,6 +90,7 @@ public class CameraController : MonoBehaviour {
             else
                 transferPosY = Mathf.Abs(p2Object.transform.position.y) + camOffset;
 
+            //number to the right is the bounding number before the camera starts to follow the player
             if (p2Object.GetComponent<ForceGrowthController>().contactPoint.position.y > -2)
             {
                 transferPosY = camOriginPoint.y;

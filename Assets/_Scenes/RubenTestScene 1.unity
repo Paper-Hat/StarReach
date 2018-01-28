@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 196003459}
   - component: {fileID: 196003458}
   m_Layer: 0
-  m_Name: Hard_Receive
+  m_Name: Hard_Receive_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,7 +784,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4e8b48a23ea9ff542b0ecf4df7a7053c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 076d620cdf7178f4e8c4c9b18507ca86, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
