@@ -29,6 +29,17 @@ public class AudioManager : MonoBehaviour {
     }
 	
 	void FixedUpdate () {
+
+        if(ForceTransferController.lastTransmissionRating == ForceTransferController.TransmissionRating.Zero)
+        {
+            if(layer1MusicAudioSource.isPlaying || layer2MusicAudioSource.isPlaying)
+            {
+                layer1MusicAudioSource.volume = 0;
+                layer2MusicAudioSource.volume = 0;
+            }
+        }
+
+
         //Debug.Log(Time.fixedDeltaTime);
         if (_p1ForceController.isMoving)
         {
