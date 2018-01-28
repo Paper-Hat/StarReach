@@ -8,6 +8,7 @@ public class HeightRulerController : MonoBehaviour {
     private Slider heightRuler;
     public Slider maxHeightSlider;
     public GameManagerController gameController;
+    public Text highScoreText;
     public GameObject playerObject;
     public float height, minHeight, maxHeight, highestReached;
     // Initialize
@@ -30,9 +31,14 @@ public class HeightRulerController : MonoBehaviour {
         maxHeightSlider.value = highestReached;
 	}
 
-    void UpdateHeightRuler() {
+    void UpdateHeightRuler()
+    {
         heightRuler.value = height;
         if (height > highestReached)
+        {
             highestReached = height;
+            highScoreText.text = (int)highestReached.ToString();
+        }
+            
     }
 }
