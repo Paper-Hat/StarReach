@@ -36,6 +36,7 @@ public class GoalObjectBehavior : MonoBehaviour {
             winConditionObject.SetBoolStarIsChild();
             _isChild = true;
             gameManager.gameFinished = true;
+            gameManager.setWinPlayerObj(playerObj);
         }
        
     }
