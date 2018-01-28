@@ -24,15 +24,18 @@ public class ForceTransferController : MonoBehaviour
     //added default force for intial bounce;
     public float defaultForce;
     public bool isMoving;
+    //Reference to the animation controller
+    public Animator animatorController;
 
     private Vector2 _addedForce;
     private bool _playerOneTapped;
     private bool _playerTwoTapped;
-
+    private Rigidbody2D _rb2d;
 	// Use this for initialization
 	void Start ()
     {
         _addedForce = Vector2.zero;
+        _rb2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,38 @@ public class ForceTransferController : MonoBehaviour
             _playerTwoTapped = true;
             CalculateForceTransfer();
         }
+        
+        if(this.name.Contains("Top"))
+        {
+            if (_rb2d.velocity.y < 0.01f && _rb2d.velocity.y > -0.01f)
+            {
+                animatorController.SetInteger("State", 3);
+            }
+            if (_rb2d.velocity.y > 0.01f)
+            {
+                animatorController.SetInteger("State", 1);
+            }
+            if (_rb2d.velocity.y < -0.01f)
+            {
+                animatorController.SetInteger("State", 2);
+            }
+        }
+        else if(this.name.Contains("Bottom"))
+        {
+            if (_rb2d.velocity.y < 0.01f && _rb2d.velocity.y > -0.01f)
+            {
+                animatorController.SetInteger("State", 3);
+            }
+            if (_rb2d.velocity.y > 0.01f)
+            {
+                animatorController.SetInteger("State", 2);
+            }
+            if (_rb2d.velocity.y < -0.01f)
+            {
+                animatorController.SetInteger("State", 1);
+            }
+        }
+        
 
     }
 
@@ -93,10 +128,10 @@ public class ForceTransferController : MonoBehaviour
 
             isMoving = false;
 
-            print("Transfered: " + (defaultForce *
+            /*print("Transfered: " + (defaultForce *
                 Vector2.up *
                 -otherPlayer.GetComponent<GravityController>().gravityDirection
-                + _addedForce));
+                + _addedForce));*/
 
             _addedForce = Vector2.zero;
 
