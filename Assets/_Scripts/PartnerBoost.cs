@@ -6,7 +6,9 @@ using UnityEngine;
 the next force transfer*/
 public class PartnerBoost : MonoBehaviour {
     public float boost;
-    public PlayerController playerController; 
+    public GameObject activeSystem, inactiveSystem;
+    public TimerController timerController;
+    //public PlayerController playerController; 
     private GameObject player, oppPlayer;
     private TimerController optc;
     public bool active;
@@ -17,6 +19,7 @@ public class PartnerBoost : MonoBehaviour {
         optc = oppPlayer.GetComponent<TimerController>();
         optc.goodTiming = true;
         optc.boostForce = boost;
+        timerController.SetBooster(this.gameObject);
     }
     void OnTriggerExit2D(Collider2D other)
     {
