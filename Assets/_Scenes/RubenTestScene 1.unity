@@ -6892,7 +6892,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -400}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513300732
 MonoBehaviour:
@@ -6914,7 +6914,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e19d6a31e07aaf40ac5806a9e673972, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d1664f58b78b4f4f853fb5390adf66c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23645,27 +23645,27 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 247aa04ee0bb4c2428ead81f157b4689, type: 3}
+      objectReference: {fileID: 8300000, guid: 972f06b3999b0bc48a081fd681b97593, type: 3}
     - target: {fileID: 82708920383910776, guid: a86a964d507026540bf2dae09adc0475,
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 103fb101d341bb4409783d6cac8e1eff, type: 3}
+      objectReference: {fileID: 8300000, guid: 1d0d13fc0dc285146830f6d8d35a05a5, type: 3}
     - target: {fileID: 82906048152789534, guid: a86a964d507026540bf2dae09adc0475,
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 8a3526626d57bc04480ed20b8dab35a7, type: 3}
+      objectReference: {fileID: 8300000, guid: 8931832745316a44090d02b64527cd31, type: 3}
     - target: {fileID: 82521089860321226, guid: a86a964d507026540bf2dae09adc0475,
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: b1b7ec4e37e78ec48a343ff7fa28611d, type: 3}
+      objectReference: {fileID: 8300000, guid: 74b8d57fceaea01418af1b3fe56307ae, type: 3}
     - target: {fileID: 82665148788813390, guid: a86a964d507026540bf2dae09adc0475,
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 58ad43ea12b7e494baa1b2ea8e0ab71c, type: 3}
+      objectReference: {fileID: 8300000, guid: 9b47d3c3aec75234a9e0f469d8054724, type: 3}
     - target: {fileID: 114766213912498126, guid: a86a964d507026540bf2dae09adc0475,
         type: 2}
       propertyPath: layer1Divider

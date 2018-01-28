@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d51f0fe5b068fb849a346113fedbf3a9
-timeCreated: 1517132806
+timeCreated: 1517170902
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -46,6 +46,13 @@ TextureImporter:
     21300078: sliderPinkTip
     21300080: sliderPurpleBody
     21300082: sliderPurpleTip
+    21300084: sliderBGM
+    21300086: sliderMaster
+    21300088: sliderSFX
+    21300090: sliderFillMask
+    21300092: sliderFillOrangeMask
+    21300094: sliderFillPurpleMask
+    21300096: sliderFillRedMask
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -135,8 +142,8 @@ TextureImporter:
       name: binary1
       rect:
         serializedVersion: 2
-        x: 1914
-        y: 778
+        x: 2
+        y: 10
         width: 1
         height: 1
       alignment: 0
@@ -149,8 +156,8 @@ TextureImporter:
       name: binary3
       rect:
         serializedVersion: 2
-        x: 1865
-        y: 1150
+        x: 2
+        y: 657
         width: 3
         height: 3
       alignment: 0
@@ -429,8 +436,8 @@ TextureImporter:
       name: logoStar
       rect:
         serializedVersion: 2
-        x: 1287
-        y: 1026
+        x: 1914
+        y: 750
         width: 29
         height: 29
       alignment: 0
@@ -538,6 +545,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
+      name: sliderBGM
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1030
+        width: 63
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderFillOrangeMask
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 1828
+        width: 98
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 41}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderFillPurpleMask
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 2003
+        width: 98
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 41}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sliderFillRedMask
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 2003
+        width: 98
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 41}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
       name: sliderFlash
       rect:
         serializedVersion: 2
@@ -566,27 +629,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: sliderOrangeBody
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 657
-        width: 98
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 0, w: 1}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: sliderOrangeTip
+      name: sliderMaster
       rect:
         serializedVersion: 2
         x: 174
-        y: 881
-        width: 98
-        height: 40
+        y: 896
+        width: 120
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -594,55 +643,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: sliderPinkBody
+      name: sliderSFX
       rect:
         serializedVersion: 2
-        x: 2
-        y: 8
-        width: 98
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 0, w: 1}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: sliderPinkTip
-      rect:
-        serializedVersion: 2
-        x: 1631
-        y: 1831
-        width: 98
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: sliderPurpleBody
-      rect:
-        serializedVersion: 2
-        x: 1948
-        y: 2043
-        width: 98
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 0, w: 1}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: sliderPurpleTip
-      rect:
-        serializedVersion: 2
-        x: 1815
-        y: 2006
-        width: 98
-        height: 40
+        x: 1865
+        y: 1128
+        width: 56
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

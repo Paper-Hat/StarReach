@@ -21,6 +21,12 @@ public class TwoClickButton : Button
             base.OnPointerClick(eventData);
 
         anim.Play("Highlighted");
+        Select();
+    }
+
+    void DisableSelf()
+    {
+        gameObject.SetActive(false);
     }
 }
 
