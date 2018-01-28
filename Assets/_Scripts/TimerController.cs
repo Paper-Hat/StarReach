@@ -15,6 +15,8 @@ public class TimerController : MonoBehaviour {
     public GameObject[] boosters;
     private GameObject theBooster;
     private ForceTransferController forceController;
+    public ParticleSystem boosterParticle;
+
 	void Start () {
         goodTiming = false;
         otherForce = otherPlayer.GetComponent<ForceGrowthController>();
@@ -62,7 +64,9 @@ public class TimerController : MonoBehaviour {
     public void ApplyForce()
     {
         otherForce.maxHeightMagnitude += boostForce;
+        Instantiate(boosterParticle, otherPlayer.transform.position, boosterParticle.transform.rotation);
     }
+
     IEnumerator CoDelay()
     {
         yield return new WaitForSeconds(1f);
