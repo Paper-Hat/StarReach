@@ -7,7 +7,7 @@ using UnityEngine;
 public class TimerController : MonoBehaviour {
     
     
-    public bool goodTiming;
+    public bool goodTiming, press;
     public ForceGrowthController otherForce;
     public GameObject otherPlayer;
     private Coroutine delayCoroutine;
@@ -23,9 +23,7 @@ public class TimerController : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl) && delayCoroutine == null)
         {
             if (goodTiming)
-            {
                 ApplyForce();
-            }
             delayCoroutine = StartCoroutine(CoDelay());
         }
 	}

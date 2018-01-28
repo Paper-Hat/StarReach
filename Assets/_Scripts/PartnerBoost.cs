@@ -6,18 +6,20 @@ using UnityEngine;
 the next force transfer*/
 public class PartnerBoost : MonoBehaviour {
     public float boost;
+    public PlayerController playerController; 
     private GameObject player, oppPlayer;
+    private TimerController optc;
+    public bool active;
     void OnTriggerStay2D(Collider2D other)
     {
         player = other.gameObject;
         oppPlayer = player.GetComponent<TimerController>().otherPlayer;
-        oppPlayer.GetComponent<TimerController>().goodTiming = true;
-        oppPlayer.GetComponent<TimerController>().boostForce = boost;
+        optc = oppPlayer.GetComponent<TimerController>();
+        optc.goodTiming = true;
+        optc.boostForce = boost;
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        player = other.gameObject;
-        oppPlayer = player.GetComponent<TimerController>().otherPlayer;
-        oppPlayer.GetComponent<TimerController>().goodTiming = false;
+        optc.goodTiming = false;
     }
 }
