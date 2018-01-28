@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class FlowManager : MonoBehaviour {
 
@@ -9,5 +9,10 @@ public class FlowManager : MonoBehaviour {
     {
         Debug.Log("Quitting");
         Application.Quit();
+    }
+
+    public void Load(string str)
+    {
+        SceneManager.LoadScene(str);
     }
 }
