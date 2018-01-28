@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
     public GameObject p1Object, p2Object, goalItemObject;
-    public AudioSource pianoMusicAudioSource, fluteMusicAudioSource, clarinetMusicAudioSource;
-    public float distanceDivider;
+    public AudioSource pianoMusicAudioSource, fluteMusicAudioSource, clarinetMusicAudioSource,layer1MusicAudioSource, layer2MusicAudioSource;
+    public float distanceDivider, layer1Divider, layer2Divider;
     private Rigidbody2D _p1rb2d, _p2rb2d;
     private ForceTransferController _p1ForceController, _p2ForceController;
-    private float _step;
-    private bool _isLerping;
+    private float _step,_layerStep;
+    private bool _isLerping,_isLayerLerping;
     private float _deltaStep;
     // Use this for initialization
     void Start () {
@@ -20,8 +20,12 @@ public class AudioManager : MonoBehaviour {
         pianoMusicAudioSource.volume = 0.5f;
         fluteMusicAudioSource.volume = 0.5f;
         clarinetMusicAudioSource.volume = 0.5f;
+        layer1MusicAudioSource.volume = 0;
+        layer2MusicAudioSource.volume = 0;
         _isLerping = false;
         Debug.Log("Threshold: " + goalItemObject.transform.position.y / distanceDivider);
+        Debug.Log("Layer1: " + goalItemObject.transform.position.y / layer1Divider);
+        Debug.Log("Layer2: " + goalItemObject.transform.position.y / layer2Divider);
     }
 	
 	void FixedUpdate () {
@@ -36,6 +40,17 @@ public class AudioManager : MonoBehaviour {
                 //fluteMusicAudioSource.volume = 1.0f;
                 //clarinetMusicAudioSource.volume = 0.25f;
             }
+
+            if(p1Object.transform.position.y > goalItemObject.transform.position.y / layer1Divider)
+            {
+                _isLayerLerping = true;
+                LerpAudioSourceSingular(layer1MusicAudioSource, 1.0f);
+            }
+            if(p1Object.transform.position.y > goalItemObject.transform.position.y / layer2Divider)
+            {
+                _isLayerLerping = true;
+                LerpAudioSourceSingular(layer2MusicAudioSource, 1.0f);
+            }
         }
         else
         {
@@ -47,6 +62,17 @@ public class AudioManager : MonoBehaviour {
                 LerpAudioSources(fluteMusicAudioSource, clarinetMusicAudioSource, 0.25f, 1f);
                 //fluteMusicAudioSource.volume = 0.25f;
                 //clarinetMusicAudioSource.volume = 1f;
+            }
+
+            if (Mathf.Abs(p2Object.transform.position.y) > goalItemObject.transform.position.y / layer1Divider)
+            {
+                _isLayerLerping = true;
+                LerpAudioSourceSingular(layer1MusicAudioSource, 1.0f);
+            }
+            if (Mathf.Abs(p2Object.transform.position.y) > goalItemObject.transform.position.y / layer2Divider)
+            {
+                _isLayerLerping = true;
+                LerpAudioSourceSingular(layer2MusicAudioSource, 1.0f);
             }
         }
 	}
@@ -62,6 +88,20 @@ public class AudioManager : MonoBehaviour {
             if (source1.volume == targetVolume1)
             {
                 _isLerping = false;
+            }
+        }
+    }
+
+    private void LerpAudioSourceSingular(AudioSource source, float targetVolume)
+    {
+        _layerStep = 0;
+        if (_isLayerLerping)
+        {
+            _layerStep += Time.fixedDeltaTime;
+            source.volume = Mathf.Lerp(source.volume, targetVolume, _layerStep);
+            if (source.volume == targetVolume)
+            {
+                _isLayerLerping = false;
             }
         }
     }
