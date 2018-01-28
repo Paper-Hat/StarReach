@@ -17,7 +17,7 @@ public class Lore : MonoBehaviour
     {
 		if(done)
         {
-            SceneManager.LoadScene("RubenTestScene1");
+            SceneManager.LoadScene("MainLevel");
             print("done");
         }
 	}

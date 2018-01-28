@@ -9,5 +9,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainMenu.unity
     guid: f6d86bfceb8d79347851c1f18399834e
   - enabled: 1
-    path: Assets/_Scenes/RubenTestScene 1.unity
+    path: Assets/_Scenes/Lore.unity
+    guid: ecaf794fc57b14b408e627221542e745
+  - enabled: 1
+    path: Assets/_Scenes/MainLevel.unity
     guid: b4194a1d3bc4f694ca6df03476fc2114
