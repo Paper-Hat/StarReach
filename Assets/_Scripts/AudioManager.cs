@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour {
     }
 	
 	void FixedUpdate () {
-        Debug.Log(Time.fixedDeltaTime);
+        //Debug.Log(Time.fixedDeltaTime);
         if (_p1ForceController.isMoving)
         {
             //If player one's distance is higher than the threshold

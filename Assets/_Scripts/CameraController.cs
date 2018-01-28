@@ -61,7 +61,7 @@ public class CameraController : MonoBehaviour {
             else
                 transferPosY = p1Object.transform.position.y + camOffset;
 
-            if(p1Object.GetComponent<ForceGrowthController>().contactPoint.position.y < 1)
+            if(p1Object.GetComponent<ForceGrowthController>().contactPoint.position.y < 2)
             {
                 transferPosY = camOriginPoint.y;
                 step += stepGain;
@@ -89,7 +89,7 @@ public class CameraController : MonoBehaviour {
             else
                 transferPosY = Mathf.Abs(p2Object.transform.position.y) + camOffset;
 
-            if (p2Object.GetComponent<ForceGrowthController>().contactPoint.position.y > -1)
+            if (p2Object.GetComponent<ForceGrowthController>().contactPoint.position.y > -2)
             {
                 transferPosY = camOriginPoint.y;
                 step += stepGain;
