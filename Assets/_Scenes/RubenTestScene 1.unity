@@ -1499,6 +1499,7 @@ GameObject:
   - component: {fileID: 198817945}
   - component: {fileID: 427459083}
   - component: {fileID: 198817949}
+  - component: {fileID: 198817950}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -1608,6 +1609,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67d39550f7ea9741a30b681abc29817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &198817950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198817944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717313dfe29417843b191bafd5012be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText1: {fileID: 251510522}
+  timerText2: {fileID: 1213502281}
 --- !u!1 &212343953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,7 +1756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -7.7, y: 0}
   m_SizeDelta: {x: 174.07, y: 25.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &251510522
@@ -3490,7 +3504,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -714967228
+  randomSeed: 695463179
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12415,7 +12429,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 421093358
+  randomSeed: -282477968
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15805,7 +15819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -8.4, y: 0}
   m_SizeDelta: {x: 174.07, y: 25.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213502281
@@ -28717,7 +28731,7 @@ GameObject:
   - component: {fileID: 1758912401}
   - component: {fileID: 1758912400}
   m_Layer: 5
-  m_Name: Altitude_P2
+  m_Name: Time_Elapsed_P2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
