@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class StartMenu : MonoBehaviour
     //Loads scene from string in arg
     public void PlayButton(string scene)
     {
-        EditorSceneManager.LoadScene(scene, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        SceneManager.LoadScene(scene, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     //Sets Start menu panel to non active and activates options panel
