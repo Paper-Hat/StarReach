@@ -17,11 +17,15 @@ public class TwoClickButton : Button
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Highlighted"))
-            base.OnPointerClick(eventData);
-
-        anim.Play("Highlighted");
-        Select();
+        if (IsInteractable())
+        {
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Highlighted"))
+            {
+                base.OnPointerClick(eventData);
+            }
+            anim.Play("Highlighted");
+            Select();
+        }
     }
 
     void DisableSelf()
