@@ -6,8 +6,10 @@ public class SoundPrefs : MonoBehaviour {
     public AudioSource mainMenuAudioSource;
 	// Use this for initialization
 	void Start () {
-		
-	}
+#if UNITY_STANDALONE && !UNITY_EDITOR
+        Screen.SetResolution(512, 1080, true);
+#endif
+    }
 	
 	// Update is called once per frame
 	void Update () {
