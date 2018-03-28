@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CreditsController : MonoBehaviour {
-    public GameObject creditsCanvas, regularCanvas;
+    public string sceneName;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,7 +17,6 @@ public class CreditsController : MonoBehaviour {
 
     public void ActivateCredits()
     {
-        creditsCanvas.SetActive(true);
-        regularCanvas.SetActive(false);
+        SceneManager.LoadScene(sceneName);
     }
 }
